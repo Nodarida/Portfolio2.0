@@ -1,9 +1,9 @@
 * { box-sizing: border-box; }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   text-align: center;
-  background-color: #101010;
+  
 }
 
 h1 {
@@ -15,6 +15,7 @@ h1 {
   margin-left: 0;
   margin-right: 0;
   font-weight: lighter;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .scene {
@@ -24,6 +25,7 @@ h1 {
   height: 300px;
   margin: 80px auto;
   perspective: 1000px;
+  z-index: 1;
 }
 
 .carousel {
@@ -33,15 +35,17 @@ h1 {
   transform: translateZ(-73px);
   transform-style: preserve-3d;
   transition: transform 1s;
+  
 }
+
 
 .carousel__cell {
   position: absolute;
   width: 450px;
   height: 300px;
   left: 10px;
-  top: 40px;
-  line-height: 116px;
+  top: 30px;
+  line-height: 110px;
   font-size: 80px;
   font-weight: bold;
   color: white;
@@ -66,10 +70,129 @@ h1 {
 
 
 .carousel-options {
-  top: 150px;
+  top: 85px;
   text-align: center;
-  color: white;
+  color: rgb(161, 161, 161);
   position: relative;
   z-index: 2;
-  background:  #101010;
+  font-family: 'IBM Plex Sans', sans-serif;
+  
+}
+
+.custom-radio-btn {
+  --size: 20px;
+  border-radius: 50%;
+  justify-content: center;
+  
+  cursor: pointer;
+  /* changes from the video   */
+  
+  
+  position: relative;
+  
+  
+}
+.custom-radio-btn input {
+  display: none;
+}
+
+/* handle if you want label on the left of the checkmark instead */
+
+.custom-radio-btn.left {
+  padding-left: 0;
+  padding-right: var(--size);
+}
+
+
+
+.custom-radio-btn.left .label {
+  margin: 0 5px;
+}
+
+.custom-radio-btn[aria-label]::after {
+  content: attr(aria-label);
+  display: inline-block;
+  
+}
+
+.custom-radio-btn .checkmark {
+  --gap: 2px;
+  --border: 2px;
+  --check-color: #9e9e9e;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+  /* changes from the video  */
+  
+  border: var(--border) solid rgb(151, 151, 151);
+  
+  position:relative;
+  top: 5px;
+ 
+}
+
+
+
+.custom-radio-btn input:checked ~ .checkmark {
+  /* changes from the video  */
+
+  /*  content box origin will make sure the bg-image only stays inside content area in between padding  */
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(
+    circle at center, 
+    var(--check-color) 
+     /* the size of the check mark is determined by subtracting from the size of the circle
+     the border(both sides) and the gap(both sides) than dividing it by 2 to get the radius of the circle        */
+       calc((var(--size) - (var(--border) * 2) - (var(--gap) * 2)) / 2), 
+    rgba(255, 255, 255, 0) 0);
+}
+
+
+.previous-button {
+  
+  background-color: #0f0f0e;
+  color: white;
+  border:2px solid rgb(151, 151, 151);
+  -webkit-border-radius: 10px;
+  padding: 8px 8px;
+  text-align: center;
+  opacity: 0.6;
+  transition: 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.previous-button:hover {
+  background-color: rgb(151, 151, 151);
+  opacity: 1; 
+  
+  
+}
+
+.next-button {
+  
+  background-color: #0f0f0e;
+  color: white;
+  border:2px solid rgb(151, 151, 151);
+  -webkit-border-radius: 10px;
+  padding: 8px 20px;
+  text-align: center;
+  opacity: 0.6;
+  transition: 0.1s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+
+.next-button:hover {
+  background-color: rgb(151, 151, 151);
+  opacity: 1; 
+ 
+  
 }

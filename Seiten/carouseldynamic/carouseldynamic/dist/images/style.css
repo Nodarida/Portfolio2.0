@@ -4,7 +4,7 @@ body {
     margin: 0;
     background: #000;
     color: white;
-    font-family: "Cosi Azure" !important;
+    font-family: 'IBM Plex Sans', sans-serif; 
 }
 
 .slider {
@@ -12,6 +12,7 @@ body {
     height: 100vh;
     position: relative;
     text-transform: uppercase !important;
+    
 }
 
 @media screen and (min-width: 53em) {
@@ -42,9 +43,10 @@ nav a {
     z-index: 1;
     padding: 20px;
     transition: 0.2s;
-    background: rgb(0, 0, 0);
+    background: rgb(27, 27, 27);
     opacity: 90%;
     color: white;
+    -webkit-border-radius: 10px;
 }
 
 
