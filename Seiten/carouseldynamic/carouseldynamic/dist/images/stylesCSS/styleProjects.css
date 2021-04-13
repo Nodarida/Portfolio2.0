@@ -46,18 +46,16 @@ h1 {
   left: 10px;
   top: 30px;
   line-height: 110px;
-  font-size: 80px;
-  font-weight: bold;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   transition: transform 1s, opacity 1s;
 }
 
-.carousel__cell:nth-child(9n+1) img {width: 450px; height: 300px;}
-.carousel__cell:nth-child(9n+2) img {width: 450px; height: 300px;}
-.carousel__cell:nth-child(9n+3) img {width: 450px; height: 300px;}
-.carousel__cell:nth-child(9n+4) img {width: 450px; height: 300px;}
-.carousel__cell:nth-child(9n+5) img {width: 450px; height: 300px;}
+.carousel__cell:nth-child(9n+1) img {width: 400px; height: 300px;}
+.carousel__cell:nth-child(9n+2) img {width: 400px; height: 300px;}
+.carousel__cell:nth-child(9n+3) img {width: 400px; height: 300px;}
+.carousel__cell:nth-child(9n+4) img {width: 400px; height: 300px;}
+.carousel__cell:nth-child(9n+5) img {width: 400px; height: 300px;}
 
 
 .carousel__cell:nth-child(1) { transform: rotateY(  0deg) translateZ(73px); }
@@ -195,4 +193,11 @@ h1 {
   opacity: 1; 
  
   
+}
+
+@media screen and (max-width: 53em) {
+  nav a {
+      top: auto;
+      bottom: 3rem;
+  }
 }
